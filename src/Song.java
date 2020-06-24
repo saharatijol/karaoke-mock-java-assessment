@@ -37,6 +37,11 @@ public class Song {
         this.lyrics = lyrics;
     }
 
+    /**
+     * Intended to convert a large string of words into a list of lyrics
+     * @param words a string of words
+     * @return a list of strings that will be the lyrics of a song
+     */
     public static List<String> parseLyrics(String words) {
         return Arrays.asList(words.split(" "));
     }

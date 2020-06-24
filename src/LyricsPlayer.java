@@ -27,6 +27,10 @@ public class LyricsPlayer extends Player {
         this.textColor = textColor;
     }
 
+    /**
+     * Translates a plain text input from the constructor to displaying given text in a particular color
+     * @param string any string (likely a lyric from a song)
+     */
     private void displayText(String string) {
         String colorCode = RESET;
         switch(textColor.toLowerCase()) {
@@ -52,6 +56,10 @@ public class LyricsPlayer extends Player {
         System.out.printf("%s%s", colorCode, string);
     }
 
+    /**
+     * Displays info for each song
+     * @param a an album instance
+     */
     @Override
     public void play(Album a) {
         for (Song s : a.getSongs()) {
@@ -60,6 +68,10 @@ public class LyricsPlayer extends Player {
         }
     }
 
+    /**
+     * Displays lyrics for each song
+     * @param s a song instance
+     */
     @Override
     public void play(Song s) {
         try {

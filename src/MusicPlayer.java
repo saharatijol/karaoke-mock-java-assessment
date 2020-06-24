@@ -20,6 +20,10 @@ public class MusicPlayer extends Player {
         this.voice = voice;
     }
 
+    /**
+     * Says all songs on an album
+     * @param a an Album instance
+     */
     @Override
     public void play(Album a) {
         for (Song s : a.getSongs()) {
@@ -27,12 +31,16 @@ public class MusicPlayer extends Player {
         }
     }
 
+    /**
+     * Says all lyrics in a song
+     * @param s a Song instance
+     */
     @Override
     public void play(Song s) {
-        Runtime r = Runtime.getRuntime();
+        Runtime r = Runtime.getRuntime(); // allows commands to be issued to the terminal
         try {
             r.exec("say " + "now playing..." + s.getTitle() + " by " + s.getArtist());
-            sleep(INTRO_PAUSE);
+            sleep(INTRO_PAUSE); // pauses thread
             for (String lyric : s.getLyrics()) {
                 if (voice.isEmpty()) {
                     r.exec("say " + lyric);

@@ -26,6 +26,9 @@ public class Album {
         this.name = name;
     }
 
+    /**
+     * Prints out song info for every song in an album
+     */
     public void printTrackListings() {
         System.out.println(name.toUpperCase() + " track listing...");
         for (int i = 0; i < songs.size(); i += 1) {

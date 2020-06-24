@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class KaraokeApp {
 
+    // For testing completed solution
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
