@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.List;
 
 public class Album {
@@ -29,7 +30,24 @@ public class Album {
     }
 
     // Print tracks
-    public void printTrackListings() {
-        System.out.println();
+    public static void printTrackListings() {
+//        for (Song song : songs) {
+//            System.out.println(songs.getTitle());
+//        }
+        for (int i = 0; i < songs.size(); i++) {
+            System.out.println(i++ + ". " + songs.get(i).getTitle() + " by " + songs.get(i).getArtist());
+        }
     }
+
+    // test
+    public static void main(String[] args) {
+        Album a = new Album("90s Hits", Arrays.asList(
+           new Song("Every Day is a Winding Road", "Sheryl Crow", Song.parseLyrics("Everyday is a winding road ... I get a little bit closer to feeling fine")),
+           new Song("Ready to Go", "Republica", Song.parseLyrics("I'm standing on the rooftops shouting out, Baby, I'm ready to go")),
+           new Song("Airbag", "Radiohead", Song.parseLyrics("In an interstellar burst I am back to save the universe"))
+        ));
+
+        printTrackListings();
+    }
+
 }
